@@ -19,6 +19,7 @@ export default {
 	data() {
 		return {
 			selectedQuote: null,
+			quoteIndex: null,
 			quoteOptions: [
 				'"When you are following a trail, you are not a trailblazer."',
 				'"Some people are so poor, all they have is money."',
@@ -29,11 +30,28 @@ export default {
 		}
 	},
 	created() {
-		this.selectedQuote = this.quoteOptions[Math.floor(Math.random()*this.quoteOptions.length)]
+		this.quoteIndex = 0
+		this.selectedQuote = this.quoteOptions[this.quoteIndex]
 		setInterval(() => {
-			this.selectedQuote = this.quoteOptions[Math.floor(Math.random()*this.quoteOptions.length)]
+			if (this.quoteIndex < this.quoteOptions.length-1) {
+				this.selectedQuote = this.quoteOptions[this.quoteIndex+1]
+				this.quoteIndex++
+			}
+			else {
+				this.selectedQuote = this.quoteOptions[0]
+				this.quoteIndex = 0
+			}
 		},10000)
 	},
 } 
 </script>
+
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>
 
