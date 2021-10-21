@@ -64,22 +64,43 @@
 		<div class="w-2/3 text-3xl text-visudo-green font-black mb-4 mt-4 text-center ml-auto mr-auto">
 			Things I can create:
 		</div>
-		<div class="ml-auto mr-auto h-3/4 w-3/4 flex flex-row justify-between items-stretch border-2 rounded-lg border-gray-500 bg-gray-500 mb-10 text-center divide-x divide-gray-900">
-			<div>
-				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 text-lg mb-10">Node.js Micro-services</div>
-				<img src="../static/Node.js_logo.svg" class="mr-auto ml-auto mb-10 w-2/3 h-2/3"/>
+		<div class="ml-auto mr-auto h-80 w-3/4 flex flex-row justify-between items-stretch border-2 rounded-lg border-gray-500 bg-gray-500 mb-10 text-center divide-x divide-gray-900">
+			<div class="w-1/3">
+				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 md:text-lg mb-4">Node.js Micro-services</div>
+				<img src="../static/Node.js_logo.svg" class="m-auto w-2/3 h-2/3"/>
 			</div>
-			<div>
-				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 text-lg">A CRUD application + front-end</div>
-				<img src="../static/lara.svg" class="ml-auto mr-auto w-2/3 h-2/3"/>
+			<div class="w-1/3">
+				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 md:text-lg mb-4">A CRUD application + front-end</div>
+				<img src="../static/lara.svg" class="m-auto w-2/3 h-2/3"/>
 			</div>
-			<div>
-				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 text-lg">A Single Page Application (SPA)</div>
-				<img src="../static/Vue.js_Logo_2.svg" class="ml-auto mr-auto w-2/3 h-2/3"/>
+			<div class="w-1/3">
+				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 md:text-lg mb-4">A Single Page Application (SPA)</div>
+				<img src="../static/Vue.js_Logo_2.svg" class="m-auto w-2/3 h-2/3"/>
 			</div>
-			<div>
-				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 text-lg">Or any other project ideas.</div>
-				<img src="../static/idee.svg" class="ml-auto mr-auto w-2/3 h-2/3"/>
+			<div class="w-1/3">
+				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 md:text-lg mb-4">Or any other project ideas.</div>
+				<img src="../static/idee.svg" class="m-auto w-2/3 h-2/3"/>
+			</div>
+		</div>
+		<div class="w-2/3 text-3xl text-visudo-green font-black mb-4 mt-4 text-center ml-auto mr-auto">
+			Services I can integrate:
+		</div>
+		<div class="ml-auto mr-auto h-80 w-3/4 flex flex-row justify-between items-stretch border-2 rounded-lg border-gray-500 bg-gray-500 mb-10 text-center divide-x divide-gray-900">
+			<div class="w-1/3">
+				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 text-lg mb-4">Discord</div>
+				<img src="../static/js_discord-ar21.svg" class="m-auto w-2/3 h-2/3"/>
+			</div>
+			<div class="w-1/3">
+				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 text-lg mb-4">Twitch</div>
+				<img src="../static/Twitch_logo.svg" class="m-auto w-2/3 h-2/3"/>
+			</div>
+			<div class="w-1/3">
+				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 text-lg mb-16">GitHub</div>
+				<img src="../static/GitHub_Logo.png" class="m-auto"/>
+			</div>
+			<div class="w-1/3">
+				<div class="text-visudo-green font-black ml-auto mr-auto mt-4 text-lg mb-16">Other 3rd-party APIs.</div>
+				<img src="../static/Globe_icon.svg" class="m-auto h-1/3 w-1/3"/>
 			</div>
 		</div>
 	</div>
