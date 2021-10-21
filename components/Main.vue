@@ -103,15 +103,21 @@
 				<img src="../static/Globe_icon.svg" class="m-auto h-1/3 w-1/3"/>
 			</div>
 		</div>
+		<div class="ml-48 mb-10">
+			<div ref="tVideo"/>
+		</div>
 	</div>
 </template>
 
 <script>
+import Twitch from '../lib/twitch.v1.js'
+
 export default {
 	name: 'Main',
 	data() {
 		return {
 			firstShow: false,
+			player: null,
 		}
 	},
 	methods: {
@@ -121,6 +127,15 @@ export default {
 		firstShowPrev() {
 			this.firstShow = false
 		},
+	},
+	mounted() {
+		const options = {
+			width: '66%',
+			height: 480,
+			channel: 'v1sudo',
+		}
+		this.player = new Twitch.Player(this.$refs.tVideo, options)
+		this.player.setVolume(0.5)
 	}
 }
 </script>
