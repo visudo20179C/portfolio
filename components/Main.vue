@@ -103,7 +103,7 @@
 				<img src="../static/Globe_icon.svg" class="m-auto h-1/3 w-1/3"/>
 			</div>
 		</div>
-		<div class="ml-48 mb-10">
+		<div class="mb-10">
 			<div ref="tVideo"/>
 		</div>
 	</div>
@@ -147,5 +147,6 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
+iframe {margin: auto}
 </style>
 
