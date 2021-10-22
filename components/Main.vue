@@ -1,7 +1,7 @@
 <template class="bg-gray-900">
 	<div>
-		<div class="flex flex-row bg-gray-900 h-full w-full justify-between items-center">
-			<div class="w-1/2 h-5/6 mt-10 mb-10 ml-4 bg-gray-500 border rounded-lg border-gray-900 shadow-lg relative">
+		<div class="flex flex-col bg-gray-900 h-full w-full justify-center items-center sm:flex-row">
+			<div class="w-2/3 h-5/6 mt-10 mb-10 ml-4 bg-gray-500 border rounded-lg border-gray-900 shadow-lg relative sm:w-1/3">
 				<div class="w-2/3 text-2xl text-visudo-green font-black mb-8 mt-4 border rounded-lg bg-gray-900 border-gray-900 text-center ml-auto mr-auto">
 					Who Am I?
 				</div>
@@ -32,7 +32,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="w-1/2 h-5/6 mt-10 mb-10 ml-4 bg-gray-500 border rounded-lg border-gray-900 shadow-lg relative">
+			<div class="w-2/3 h-5/6 mt-10 mb-10 ml-4 bg-gray-500 border rounded-lg border-gray-900 shadow-lg relative sm:w-1/3">
 				<div class="w-2/3 text-2xl text-visudo-green font-black mb-4 mt-4 border rounded-lg bg-gray-900 border-gray-900 text-center ml-auto mr-auto">
 					What do I want to do?
 				</div>
@@ -64,7 +64,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-2/3 h-5/6 mt-4 mb-10 mx-auto bg-gray-500 border rounded-lg border-gray-900 shadow-lg">
+		<div class="w-3/4 h-5/6 mt-4 mb-10 mx-auto bg-gray-500 border rounded-lg border-gray-900 shadow-lg">
 			<div class="w-2/3 text-2xl text-visudo-green font-black mb-6 mt-4 border rounded-lg bg-gray-900 border-gray-900 text-center ml-auto mr-auto">
 				What have I done?
 			</div>
@@ -72,30 +72,30 @@
 				<div class="text-gray-900 text-center mb-4 mt-4 w-3/4 ml-auto mr-auto">
 					I've worked on several websites and web projects. My core langauges are PHP &amp; JavaScript. I've used these languages to implement standalone projects as well as projects using a framework such as Laravel or VueJS. Here are some examples:
 				</div>
-				<ul class="text-gray-900 text-left ml-2 w-5/6 ml-auto mr-auto text-sm mb-12 pt-8">
-					<li class="mb-6"><a href="https://staging.ponder-app.org/" target="_blank" class="text-gray-900 border-2 rounded-full py-1.5 px-3 border-gray-900 text-md font-black hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60">Ponder</a> - An API-based Trivia Application written in the Laravel framework.</li>
-					<li class="mb-6"><a href="https://connect-four.visudo.me/" target="_blank" class="text-gray-900 border-2 rounded-full py-1.5 px-3 border-gray-900 text-md font-black hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60">ConnectFour</a> - A web-based version of the game "Connect-Four" in the VueJS framework.<a href="https://github.com/visudo20179C/connect-four" target="_blank"><img src="../static/GitHub-Mark-32px.png" class="inline-block h-6 w-6 ml-2"/></a></li>
-					<li class="mb-6"><a href="https://apex-stats.visudo.me/" target="_blank" class="text-gray-900 border-2 rounded-full py-1.5 px-3 border-gray-900 text-md font-black hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60">ApexPlayerStats</a> - A hobby project that was inspired by my love for gaming. Another in VueJS.<a href="https://github.com/visudo20179C/apex-player-stats" target="_blank"><img src="../static/GitHub-Mark-32px.png" class="inline-block h-6 w-6 ml-2"/></a></li>
-				</ul>
+				<div class="text-gray-900 text-left ml-2 w-5/6 ml-auto mr-auto text-sm mb-12 pt-8 flex flex-col justify-between sm:flex-row">
+					<div class="flex flex-col"><a href="https://staging.ponder-app.org/" target="_blank" class="w-2/3 ml-auto mr-auto text-gray-900 text-center text-xs sm:text-md border-2 rounded-full py-1.5 px-3 border-gray-900 text-md font-black hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60">Ponder</a><div class="w-2/3 m-auto mt-4 mb-4 text-center">An API-based Trivia Appdivcation written in the Laravel framework.</div></div>
+					<div class="flex flex-col"><a href="https://connect-four.visudo.me/" target="_blank" class="w-2/3 ml-auto mr-auto text-gray-900 text-center text-xs sm:text-md border-2 rounded-full py-1.5 px-3 border-gray-900 text-md font-black hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60">ConnectFour</a><div class="w-2/3 m-auto mt-4 mb-4 text-center">A web-based version of the game "Connect-Four" in the VueJS framework.<a href="https://github.com/visudo20179C/connect-four" target="_blank"><img src="../static/GitHub-Mark-32px.png" class="m-auto mt-4"/></a></div></div>
+					<div class="flex flex-col"><a href="https://apex-stats.visudo.me/" target="_blank" class="w-2/3 ml-auto mr-auto text-gray-900 text-center text-xs sm:text-md border-2 rounded-full py-1.5 px-3 border-gray-900 text-md font-black hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60">ApexPlayerStats</a><div class="w-2/3 m-auto mt-4 text-center"> - A hobby project that was inspired by my love for gaming. Another in VueJS.<a href="https://github.com/visudo20179C/apex-player-stats" target="_blank"><img src="../static/GitHub-Mark-32px.png" class="m-auto mt-4"/></a></div></div>
+				</div>
 			</div>
 		</div>
 		<div class="w-2/3 text-3xl text-visudo-green font-black mb-4 mt-4 text-center ml-auto mr-auto">
 			Things I can create:
 		</div>
-		<div class="ml-auto mr-auto h-80 w-3/4 flex flex-row justify-between items-stretch border-2 rounded-lg border-gray-500 bg-gray-500 mb-10 text-center divide-x divide-gray-900 text-gray-900 font-bold">
-			<div class="w-1/3">
+		<div class="ml-auto mr-auto h-60 w-full flex flex-row justify-evenly items-top mb-10 text-center text-gray-900 font-bold sm:h-80">
+			<div class="w-1/6 border border-2 rounded-lg border-gray-900 bg-gray-500">
 				<div class="ml-auto mr-auto mt-4 md:text-lg mb-4">Node.js Micro-services</div>
 				<img src="../static/Node.js_logo.svg" class="m-auto w-2/3 h-2/3"/>
 			</div>
-			<div class="w-1/3">
+			<div class="w-1/6 border border-2 rounded-lg border-gray-900 bg-gray-500">
 				<div class="ml-auto mr-auto mt-4 md:text-lg mb-4">A CRUD application</div>
 				<img src="../static/lara.svg" class="m-auto w-2/3 h-2/3"/>
 			</div>
-			<div class="w-1/3">
+			<div class="w-1/6 border border-2 rounded-lg border-gray-900 bg-gray-500">
 				<div class="ml-auto mr-auto mt-4 md:text-lg mb-4">A Single Page Application</div>
 				<img src="../static/Vue.js_Logo_2.svg" class="m-auto w-2/3 h-2/3"/>
 			</div>
-			<div class="w-1/3">
+			<div class="w-1/6 border border-2 rounded-lg border-gray-900 bg-gray-500">
 				<div class="ml-auto mr-auto mt-4 md:text-lg mb-4">Any other project ideas</div>
 				<img src="../static/idee.svg" class="m-auto w-2/3 h-2/3"/>
 			</div>
@@ -103,23 +103,26 @@
 		<div class="w-2/3 text-3xl text-visudo-green font-black mb-4 mt-4 text-center ml-auto mr-auto">
 			Services I can integrate:
 		</div>
-		<div class="ml-auto mr-auto h-80 w-3/4 flex flex-row justify-between items-stretch border-2 rounded-lg border-gray-500 bg-gray-500 mb-10 text-center divide-x divide-gray-900 text-gray-900 font-bold">
-			<div class="w-1/3">
+		<div class="ml-auto mr-auto h-60 w-full flex flex-row justify-evenly items-top mb-10 text-center text-gray-900 font-bold sm:h-80">
+			<div class="w-1/6 border border-2 rounded-lg border-gray-900 bg-gray-500">
 				<div class="ml-auto mr-auto mt-4 text-lg mb-4">Discord</div>
 				<img src="../static/js_discord-ar21.svg" class="m-auto w-2/3 h-2/3"/>
 			</div>
-			<div class="w-1/3">
+			<div class="w-1/6 border border-2 rounded-lg border-gray-900 bg-gray-500">
 				<div class="ml-auto mr-auto mt-4 text-lg mb-4">Twitch</div>
 				<img src="../static/Twitch_logo.svg" class="m-auto w-2/3 h-2/3"/>
 			</div>
-			<div class="w-1/3">
+			<div class="w-1/6 border border-2 rounded-lg border-gray-900 bg-gray-500">
 				<div class="ml-auto mr-auto mt-4 text-lg mb-16">GitHub</div>
 				<img src="../static/GitHub_Logo.png" class="m-auto"/>
 			</div>
-			<div class="w-1/3">
+			<div class="w-1/6 border border-2 rounded-lg border-gray-900 bg-gray-500">
 				<div class="ml-auto mr-auto mt-4 text-lg mb-16">3rd-party APIs</div>
 				<img src="../static/Globe_icon.svg" class="m-auto h-1/3 w-1/3"/>
 			</div>
+		</div>
+		<div class="w-2/3 text-3xl text-visudo-green font-black mb-4 mt-4 text-center ml-auto mr-auto">
+			My Twitch Channel:
 		</div>
 		<div class="mb-10 w-3/4 ml-auto mr-auto">
 			<div class="border border-2 rounded-lg border-gray-900 bg-gray-500 pt-10 pb-10" ref="tVideo"/>
