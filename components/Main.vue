@@ -111,25 +111,61 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-2/3 text-3xl text-visudo-green font-black mb-4 mt-8 text-center mx-auto">
+		<div class="w-2/3 text-3xl text-visudo-green font-black mb-10 mt-8 text-center mx-auto">
 			My Twitch Channel:
 		</div>
-		<div class="mb-10 w-5/6 mx-auto sm:w-3/4">
-			<div ref="tVideo"/>
+		<div class="flex flex-col h-full w-full justify-evenly mb-10 lg:flex-row mx-auto lg:w-3/4">
+			<div class="w-5/6 lg:w-1/2 mx-auto mb-4 lg:mb-none">
+				<div ref="tVideo"/>
+			</div>
+			<div class="w-1/2 h-full mb-4 text-center mx-auto">
+				<transition name="fade" mode="out-in">
+					<div v-if="this.data != null" class="text-visudo-green" key="0">
+						<div class="text-2xl font-bold mb-10">
+							My last played legend in "Apex Legends":
+						</div>
+						<div class="text-2xl font-bold mt-10">
+							{{this.data.legends.selected.LegendName}}
+						</div>
+						<img class="object-contain mx-auto h-48 w-48" :src="this.data.legends.selected.ImgAssets.icon"/>
+						<p class="ml-auto mr-auto mb-4 w-64 mx-auto">
+							Skin: <i>{{this.data.legends.selected.gameInfo.skin}}</i>
+						</p>
+						<h1 class="text-xl mb-4 mx-auto">Equipped Trackers:</h1>
+						<ul>
+							<div v-for="item in this.data.legends.selected.data" class="flex flex-col divide-y divide-gray-500 mx-auto">
+								<li class="w-5/6 mx-auto">{{item.name}}: {{item.value}}</li>
+							</div>
+						</ul>
+					</div>
+					<div v-else class="text-visudo-green" key="1">
+						<div class="text-2xl mb-10 mt-10">Loading... Please Wait... </div>
+						<half-circle-spinner
+						  :animation-duration="1000"
+						  :size="100"
+						  color="#15AB0D"
+						  class="m-auto"
+						/>
+					</div>
+				</transition>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
 import Twitch from '../lib/twitch.v1.js'
+import { HalfCircleSpinner } from 'epic-spinners'
 
 export default {
 	name: 'Main',
+	components: {HalfCircleSpinner},
 	data() {
 		return {
 			firstShow: false,
 			secondShow: false,
 			player: null,
+			data: null,
 		}
 	},
 	methods: {
@@ -145,6 +181,9 @@ export default {
 		secondShowPrev() {
 			this.secondShow = false
 		},
+		processData(data) {
+			this.data = data
+		},
 	},
 	mounted() {
 		const options = {
@@ -154,7 +193,17 @@ export default {
 		}
 		this.player = new Twitch.Player(this.$refs.tVideo, options)
 		this.player.setVolume(0.5)
-	}
+	},
+	created() {
+		fetch(
+			"https://api.mozambiquehe.re/bridge?version=5&platform=PC&player=visudo20179&auth=QYMCCkwuWGEeBQFL30tT",
+			{
+				method: 'GET',
+			}
+		)
+		.then(response => response.json())
+		.then(data => this.processData(data))
+	},
 }
 </script>
 

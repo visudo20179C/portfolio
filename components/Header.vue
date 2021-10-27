@@ -3,7 +3,7 @@
 		<div class="flex justify-between pt-5">
 			<div class="flex mt-auto mb-auto">
 				<img class="h-12 w-12 ml-4 mt-auto mb-auto" src="../static/favicon.svg"/>
-				<div class="text-lg text-visudo-green font-bold mt-auto mb-auto ml-2 hidden sm:block"> Streamer & Web Developer </div>
+				<div class="text-lg text-visudo-green font-bold mt-auto mb-auto ml-2 hidden sm:block"> Streaming | Web Development </div>
 			</div>
 			<div class="hidden mt-auto mb-auto text-lg text-blue-600 font-bold sm:flex">
 				<a class="mr-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.twitch.tv/v1sudo" target="_blank">Twitch</a> |
@@ -13,16 +13,18 @@
 			</div>
 			<div class="flex sm:hidden">
 				<button @click="toggleMenu">
-					<div v-if="!shouldToggleMenu">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-visudo-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-						</svg>
-					</div>
-					<div v-else>
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-visudo-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-						</svg>
-					</div>
+					<transition name="fade" mode="out-in">
+						<div v-if="!shouldToggleMenu" key="0">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-visudo-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</div>
+						<div v-else key="1">
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-visudo-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+							</svg>
+						</div>
+					</transition>
 				</button>
 			</div>
 		</div>
