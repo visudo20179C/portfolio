@@ -1,6 +1,6 @@
 <template class="bg-gray-900">
 	<div class="w-full">
-		<div class="w-5/6 h-5/6 mt-20 mb-10 mx-auto bg-gray-900 border-b-4 border-gray-500 rounded shadow-lg relative lg:h-80">
+		<div class="w-5/6 h-5/6 mt-20 mb-10 mx-auto bg-gray-900 relative lg:h-80 border-b-2 border-gray-500">
 			<div class="mb-24 w-3/4 m-auto">
 				<transition name="fade" mode="out-in">
 					<div v-if="!firstShow" key="0">
@@ -38,11 +38,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-5/6 h-5/6 mt-4 mb-10 mx-auto bg-gray-900 shadow-lg font-bold text-gray-500">
+		<div class="w-5/6 h-5/6 mt-4 mb-20 mx-auto bg-gray-900 shadow-lg font-bold text-gray-500 border-b-2 border-gray-500">
 			<div class="w-2/3 text-3xl text-visudo-green font-black mb-8 mt-4 border rounded-lg bg-gray-900 border-gray-900 text-center mx-auto">
 				What have I done?
 			</div>
-			<div class="border-b-4 rounded border-gray-500">
+			<div>
 				<div class="text-left mb-6 mt-6 w-3/4 ml-auto mr-auto text-lg">
 					I've worked on several websites and web projects. My core langauges are PHP &amp; JavaScript. I've used these languages to implement standalone projects as well as projects using a framework such as Laravel or VueJS. Here are some examples:
 				</div>
@@ -53,7 +53,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-5/6 border-b-4 rounded border-gray-500 mx-auto">
+		<div class="w-5/6 mx-auto border-b-2 border-gray-500">
 			<transition name="fade" mode="out-in">
 				<div v-if="!secondShow" key="0">
 					<div class="w-2/3 text-3xl text-visudo-green font-black mb-8 mt-4 text-center ml-auto mr-auto">
@@ -150,22 +150,74 @@
 				</transition>
 			</div>
 		</div>
+		<div class="w-2/3 text-3xl text-visudo-green font-black mb-10 mt-8 text-center mx-auto flex flex-col">
+			My GitHub Activity:
+			<i class="text-visudo-green text-xs sm:text-sm">(Showing 10 latest commits)</i>
+		</div>
+		<div v-if="this.gitHubData != null" class="flex flex-col mx-auto w-4/5 text-gray-500 mb-10">
+			<div v-for="(item, index) in this.gitHubData">
+				<div v-if="index < 10">
+					<div v-if="item.type == 'PushEvent' || 'PullRequestEvent'">
+						<div class="w-3/4 mx-auto flex flex-col mb-4 items-center lg:flex-row">
+							<button>
+								<div v-if="item.payload.head" class="text-visudo-green text-center border-2 rounded-full py-1 px-2 border-visudo-green text-sm sm:text-md mr-4">
+									{{headRevision(item.payload.head)}}
+								</div>
+								<div v-else-if="item.payload.pull_request.merge_commit_sha != null" class="text-visudo-green text-center border-2 rounded-full py-1 px-2 border-visudo-green text-sm sm:text-md mr-4">
+									{{headRevision(item.payload.pull_request.merge_commit_sha)}}
+								</div>
+								<div v-else class="text-visudo-green text-center border-2 rounded-full py-1 px-2 border-visudo-green text-sm sm:text-md mr-4">
+									{{headRevision(item.payload.pull_request.head.sha)}}
+								</div>
+							</button>
+							<div class="text-visudo-blue mr-4">
+								<a class="hover:text-blue-300" :href="item.repo.url" target="_blank">{{item.repo.name}}</a>
+							</div>
+							<div class="text-xs sm:text-sm">
+								<div v-if="item.payload.commits && item.payload.commits.length > 1">
+									"{{item.payload.commits.at(-1).message}}"
+								</div>
+								<div v-else-if="item.payload.commits">
+									"{{item.payload.commits[0].message}}"
+								</div>
+								<div v-else>
+									"{{item.payload.pull_request.title}}"
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div v-else>
+			<div class="text-2xl mb-10 mt-10">Loading... Please Wait... </div>
+			<half-circle-spinner
+			  :animation-duration="1000"
+			  :size="100"
+			  color="#15AB0D"
+			  class="m-auto"
+			/>
+		</div>
 	</div>
 </template>
 
 <script>
 import Twitch from '../lib/twitch.v1.js'
 import { HalfCircleSpinner } from 'epic-spinners'
+import { Octokit } from '@octokit/core'
 
 export default {
 	name: 'Main',
-	components: {HalfCircleSpinner},
+	components: {HalfCircleSpinner, Octokit},
 	data() {
 		return {
 			firstShow: false,
 			secondShow: false,
 			player: null,
 			data: null,
+			gitHubData: null,
+			mozamKey: "QYMCCkwuWGEeBQFL30tT",
+			gitHubKey: "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",
 		}
 	},
 	methods: {
@@ -184,6 +236,14 @@ export default {
 		processData(data) {
 			this.data = data
 		},
+		async makeGitHubRequest() {
+			const octokit = new Octokit({auth: this.gitHubKey})
+			const gitHubResponse = await octokit.request("GET /users/visudo20179C/events")
+			this.gitHubData = gitHubResponse.data
+		},
+		headRevision(s) {
+			return s.substr(0,7)
+		}
 	},
 	mounted() {
 		const options = {
@@ -196,13 +256,14 @@ export default {
 	},
 	created() {
 		fetch(
-			"https://api.mozambiquehe.re/bridge?version=5&platform=PC&player=visudo20179&auth=QYMCCkwuWGEeBQFL30tT",
+			"https://api.mozambiquehe.re/bridge?version=5&platform=PC&player=visudo20179&auth="+this.mozamKey,
 			{
 				method: 'GET',
 			}
 		)
 		.then(response => response.json())
 		.then(data => this.processData(data))
+		this.makeGitHubRequest()
 	},
 }
 </script>
