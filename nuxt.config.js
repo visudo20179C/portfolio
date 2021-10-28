@@ -45,5 +45,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  env: {
+	GITHUB_ACCESS_TOKEN: process.env.GITHUB_ACCESS_TOKEN || null,
+	MOZAMRE_API_TOKEN: process.env.MOZAMRE_API_TOKEN || null
+  },
 }

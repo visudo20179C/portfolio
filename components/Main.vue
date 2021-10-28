@@ -171,7 +171,7 @@
 								</div>
 							</button>
 							<div class="text-visudo-blue mr-4">
-								<a class="hover:text-blue-300" :href="item.repo.url" target="_blank">{{item.repo.name}}</a>
+								{{item.repo.name}}
 							</div>
 							<div class="text-xs sm:text-sm">
 								<div v-if="item.payload.commits && item.payload.commits.length > 1">
@@ -189,8 +189,8 @@
 				</div>
 			</div>
 		</div>
-		<div v-else>
-			<div class="text-2xl mb-10 mt-10">Loading... Please Wait... </div>
+		<div v-else class="w-full mx-auto mb-10">
+			<div class="text-2xl mb-10 mt-10 text-center text-visudo-green">Loading... Please Wait... </div>
 			<half-circle-spinner
 			  :animation-duration="1000"
 			  :size="100"
@@ -216,8 +216,8 @@ export default {
 			player: null,
 			data: null,
 			gitHubData: null,
-			mozamKey: "QYMCCkwuWGEeBQFL30tT",
-			gitHubKey: "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",
+			mozamKey: process.env.MOZAMRE_API_TOKEN,
+			gitHubKey: process.env.GITHUB_ACCESS_TOKEN,
 		}
 	},
 	methods: {
