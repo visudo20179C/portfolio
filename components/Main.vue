@@ -1,6 +1,6 @@
 <template class="bg-gray-900">
 	<div class="w-full">
-		<div class="w-5/6 h-5/6 mt-10 mb-10 mx-auto bg-gray-900 relative lg:h-80 border-b-2 border-gray-500">
+		<div class="w-5/6 h-5/6 mt-20 mb-10 mx-auto bg-gray-900 relative lg:h-80 border-b-2 border-gray-500">
 			<div class="mb-24 w-3/4 m-auto">
 				<transition name="fade" mode="out-in">
 					<div v-if="!firstShow" key="0">
