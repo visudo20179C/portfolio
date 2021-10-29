@@ -1,6 +1,6 @@
 <template class="bg-gray-900">
 	<div class="w-full">
-		<div class="w-5/6 h-5/6 mt-20 mb-10 mx-auto bg-gray-900 relative lg:h-80 border-b-2 border-gray-500">
+		<div class="w-5/6 h-5/6 mt-10 mb-10 mx-auto bg-gray-900 relative lg:h-80 border-b-2 border-gray-500">
 			<div class="mb-24 w-3/4 m-auto">
 				<transition name="fade" mode="out-in">
 					<div v-if="!firstShow" key="0">
@@ -122,12 +122,12 @@
 				<transition name="fade" mode="out-in">
 					<div v-if="this.data != null" class="text-visudo-green" key="0">
 						<div class="text-2xl font-bold mb-10">
-							My last played legend in "Apex Legends":
+							My last played legend in Apex Legends:
 						</div>
 						<div class="text-2xl font-bold mt-10">
 							{{this.data.legends.selected.LegendName}}
 						</div>
-						<img class="object-contain mx-auto h-48 w-48" :src="this.data.legends.selected.ImgAssets.icon"/>
+						<img class="object-contain mx-auto h-48 w-48 mb-4" :src="this.data.legends.selected.ImgAssets.icon"/>
 						<p class="ml-auto mr-auto mb-4 w-64 mx-auto">
 							Skin: <i>{{this.data.legends.selected.gameInfo.skin}}</i>
 						</p>
@@ -154,36 +154,32 @@
 			My GitHub Activity:
 			<i class="text-visudo-green text-xs sm:text-sm">(Showing 10 latest commits)</i>
 		</div>
-		<div v-if="this.gitHubData != null" class="flex flex-col mx-auto w-4/5 text-gray-500 mb-10">
-			<div v-for="(item, index) in this.gitHubData">
-				<div v-if="index < 10">
-					<div v-if="item.type == 'PushEvent' || 'PullRequestEvent'">
-						<div class="w-3/4 mx-auto flex flex-col mb-4 items-center lg:flex-row">
-							<button>
-								<div v-if="item.payload.head" class="text-visudo-green text-center border-2 rounded-full py-1 px-2 border-visudo-green text-sm sm:text-md mr-4">
-									{{headRevision(item.payload.head)}}
-								</div>
-								<div v-else-if="item.payload.pull_request.merge_commit_sha != null" class="text-visudo-green text-center border-2 rounded-full py-1 px-2 border-visudo-green text-sm sm:text-md mr-4">
-									{{headRevision(item.payload.pull_request.merge_commit_sha)}}
-								</div>
-								<div v-else class="text-visudo-green text-center border-2 rounded-full py-1 px-2 border-visudo-green text-sm sm:text-md mr-4">
-									{{headRevision(item.payload.pull_request.head.sha)}}
-								</div>
-							</button>
-							<div class="text-visudo-blue mr-4">
-								{{item.repo.name}}
-							</div>
-							<div class="text-xs sm:text-sm">
-								<div v-if="item.payload.commits && item.payload.commits.length > 1">
-									"{{item.payload.commits.at(-1).message}}"
-								</div>
-								<div v-else-if="item.payload.commits">
-									"{{item.payload.commits[0].message}}"
-								</div>
-								<div v-else>
-									"{{item.payload.pull_request.title}}"
-								</div>
-							</div>
+		<div v-if="this.gitHubData != null" class="flex flex-col w-full text-gray-500 mb-10">
+			<div v-for="(item, index) in this.pushEvents">
+				<div class="w-3/4 mx-auto flex flex-col items-center mb-4 lg:flex-row">
+					<button>
+						<div v-if="item.payload.head" class="text-visudo-green text-center border-2 rounded-full py-1 px-2 border-visudo-green text-sm sm:text-md mr-4">
+							{{headRevision(item.payload.head)}}
+						</div>
+						<div v-else-if="item.payload.pull_request.merge_commit_sha != null" class="text-visudo-green text-center border-2 rounded-full py-1 px-2 border-visudo-green text-sm sm:text-md mr-4">
+							{{headRevision(item.payload.pull_request.merge_commit_sha)}}
+						</div>
+						<div v-else class="text-visudo-green text-center border-2 rounded-full py-1 px-2 border-visudo-green text-sm sm:text-md mr-4">
+							{{headRevision(item.payload.pull_request.head.sha)}}
+						</div>
+					</button>
+					<div class="text-visudo-blue mr-4">
+						{{item.repo.name}}
+					</div>
+					<div class="text-xs sm:text-sm">
+						<div v-if="item.payload.commits && item.payload.commits.length > 1">
+							"{{item.payload.commits.at(-1).message}}"
+						</div>
+						<div v-else-if="item.payload.commits">
+							"{{item.payload.commits[0].message}}"
+						</div>
+						<div v-else>
+							"{{item.payload.pull_request.title}}"
 						</div>
 					</div>
 				</div>
@@ -197,6 +193,13 @@
 			  color="#15AB0D"
 			  class="m-auto"
 			/>
+		</div>
+		<div class="w-3/4 text-visudo-green mx-auto mb-10 text-center">
+			<div class="mb-4">
+				<i>The source code for this wesbite is open-source and proudly made using the </i><a class="text-visudo-blue hover:text-blue-300" href="https://nuxtjs.org/" target="_blank">NuxtJS</a><i> framework</i> 
+			</div>
+			<iframe src="https://ghbtns.com/github-btn.html?user=visudo20179C&repo=portfolio&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+			</div>
 		</div>
 	</div>
 </template>
@@ -216,6 +219,7 @@ export default {
 			player: null,
 			data: null,
 			gitHubData: null,
+			pushEvents: [],
 			mozamKey: process.env.MOZAMRE_API_TOKEN,
 			gitHubKey: process.env.GITHUB_ACCESS_TOKEN,
 		}
@@ -240,10 +244,24 @@ export default {
 			const octokit = new Octokit({auth: this.gitHubKey})
 			const gitHubResponse = await octokit.request("GET /users/visudo20179C/events")
 			this.gitHubData = gitHubResponse.data
+			this.setupPushEvents()
 		},
 		headRevision(s) {
 			return s.substr(0,7)
-		}
+		},
+		setupPushEvents() {
+			var count = 0
+			this.gitHubData.forEach((elem) => {
+				if(this.pushEvents.length == 10) {
+					return
+				}
+				else {
+					if(elem.type == 'PushEvent') {
+						this.pushEvents.push(elem)
+					}
+				}
+			})
+		},
 	},
 	mounted() {
 		const options = {
