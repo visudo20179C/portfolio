@@ -112,7 +112,7 @@
 			</div>
 		</div>
 		<div class="w-2/3 text-3xl text-visudo-green font-black mb-10 mt-8 text-center mx-auto">
-			My Twitch Channel:
+			Twitch Embed/Apex Stats:
 		</div>
 		<div class="flex flex-col h-full w-full justify-evenly mb-10 lg:flex-row mx-auto lg:w-3/4">
 			<div class="w-5/6 lg:w-1/2 mx-auto mb-4 lg:mb-none">
@@ -120,9 +120,9 @@
 			</div>
 			<div class="w-1/2 h-full mb-4 text-center mx-auto">
 				<transition name="fade" mode="out-in">
-					<div v-if="this.data != null" class="text-visudo-green" key="0">
+					<div v-if="this.data != null && this.data.Error == null" class="text-visudo-green" key="0">
 						<div class="text-2xl font-bold mb-10">
-							My last played legend in Apex Legends:
+							Last Played Legend:
 						</div>
 						<div class="text-2xl font-bold mt-10">
 							{{this.data.legends.selected.LegendName}}
@@ -137,6 +137,9 @@
 								<li class="w-5/6 mx-auto">{{item.name}}: {{item.value}}</li>
 							</div>
 						</ul>
+					</div>
+					<div v-else-if="this.data != null && this.data.Error != null" class="mx-auto my-auto text-center text-2xl text-visudo-green">
+						{{this.data.Error}}
 					</div>
 					<div v-else class="text-visudo-green" key="1">
 						<div class="text-2xl mb-10 mt-10">Loading... Please Wait... </div>
@@ -238,7 +241,12 @@ export default {
 			this.secondShow = false
 		},
 		processData(data) {
-			this.data = data
+			if(data.Error) {
+				this.data = {'Error': 'Something went wrong :('}
+			}
+			else {
+				this.data = data
+			}
 		},
 		async makeGitHubRequest() {
 			const octokit = new Octokit({auth: this.gitHubKey})
@@ -270,7 +278,6 @@ export default {
 			channel: 'v1sudo',
 		}
 		this.player = new Twitch.Player(this.$refs.tVideo, options)
-		this.player.setVolume(0.5)
 	},
 	created() {
 		fetch(
