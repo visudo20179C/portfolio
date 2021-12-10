@@ -11,8 +11,8 @@
 		</div>
 		<div class="w-3/4 h-5/6 mx-auto flex flex-col justify-evenly divide-x lg:flex-row divide-gray-900 mb-24">
 			<div class="mx-auto mb-8 text-xs lg:text-md"><a href="https://visudo.me/follow-bot" target="_blank" class="w-2/3 mx-auto text-visudo-green text-center border-2 rounded-full py-1.5 px-3 border-visudo-green hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 text-lg">Follow-Bot Home</a></div>
-			<div class="mx-auto mb-8 text-xs lg:text-md"><a href="https://apex-stats.visudo.me/" target="_blank" class="w-2/3 mx-auto text-visudo-green text-center border-2 rounded-full py-1.5 px-3 border-visudo-green hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 text-lg">Follow-Bot TOS</a></div>
-			<div class="mx-auto text-xs lg:text-md"><a href="https://apex-stats.visudo.me/" target="_blank" class="w-2/3 mx-auto text-visudo-green text-center border-2 rounded-full py-1.5 px-3 border-visudo-green hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 text-lg">Privacy Policy</a></div>
+			<div class="mx-auto mb-8 text-xs lg:text-md"><a href="https://visudo.me/follow-bot/tos" target="_blank" class="w-2/3 mx-auto text-visudo-green text-center border-2 rounded-full py-1.5 px-3 border-visudo-green hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 text-lg">Follow-Bot TOS</a></div>
+			<div class="mx-auto text-xs lg:text-md"><a href="https://visudo.me/follow-bot/privacy" target="_blank" class="w-2/3 mx-auto text-visudo-green text-center border-2 rounded-full py-1.5 px-3 border-visudo-green hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 text-lg">Privacy Policy</a></div>
 		</div>
 		<div class="w-5/6 text-3xl text-visudo-green font-black mb-4 border rounded-lg border-gray-900 text-center mx-auto">
 			Why did my role not sync?
@@ -42,5 +42,6 @@
 <script>
 export default {
 	name: 'Follow-Bot-Thank-You',
+	head: {title: 'Thank You'},
 }
 </script>

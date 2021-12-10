@@ -66,6 +66,7 @@
 <script>
 export default {
 	name: 'Follow-Bot',
+	head: {title: 'Follow-Bot'},
 }
 </script>
 
