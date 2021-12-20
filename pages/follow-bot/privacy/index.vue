@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="font-mono">
 		<Header/>
 		<Follow-Bot-Privacy-Policy/>
 		<Footer/>
