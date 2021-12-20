@@ -24,7 +24,7 @@
 	<div class="w-5/6 text-3xl text-visudo-green font-black mb-8 mt-16 border rounded-lg border-gray-900 text-center mx-auto">
 		Follow-Bot server owner only commands:
 	</div>
-	<div class="w-5/6 mx-auto flex flex-col justify-evenly divide-x divide-gray-900 lg:flex-row lg:divide-gray-500 mb-16">
+	<div class="w-5/6 mx-auto flex flex-col justify-evenly divide-x divide-gray-900 lg:flex-row lg:divide-gray-500 mb-8">
 		<div class="w-2/3 flex flex-col mx-auto">
 			<div class="w-2/3 mx-auto border-2 rounded-full py-1 px-2 border-visudo-blue text-center text-lg text-visudo-blue mb-4">/register</div>
 			<div class="text-sm text-visudo-green lg:mb-2">Registers your server in the Follow-Bot database.</div>
@@ -50,6 +50,16 @@
 			<div class="w-2/3 mx-auto border-2 rounded-full py-1 px-2 border-visudo-blue text-center text-lg text-visudo-blue mb-4">/remove</div>
 			<div class="text-sm text-visudo-green lg:mb-2 lg:ml-6">Removes your server from the Follow-Bot database.</div>
 			<div class="text-xs text-visudo-green lg:ml-6"><i>NOTE: This is un-doable. Doing so and re-registering will require all your users' to run /authorize again before syncing.</i></div>
+		</div>
+	</div>
+	<div class="w-5/6 mx-auto flex flex-col justify-evenly divide-x divide-gray-900 lg:flex-row lg:divide-gray-500 mb-16">
+		<div class="w-2/3 flex flex-col mx-auto mb-4">
+			<div class="w-1/3 mx-auto border-2 rounded-full py-1 px-2 border-visudo-blue text-center text-lg text-visudo-blue mb-4">/show</div>
+			<div class="text-sm text-center text-visudo-green lg:mb-2 lg:ml-6">Prints your Follow-Bot configuration in a message embed.</div>
+		</div>
+		<div class="w-2/3 flex flex-col mx-auto">
+			<div class="w-1/3 mx-auto border-2 rounded-full py-1 px-2 border-visudo-blue text-center text-lg text-visudo-blue mb-4">/purge</div>
+			<div class="text-sm text-center text-visudo-green lg:mb-2 lg:ml-6">Purges all users' of their Follower role if they no longer follow you on Twitch.</div>
 		</div>
 	</div>
 	<div class="w-5/6 text-3xl text-visudo-green font-black mb-8 mt-16 border rounded-lg border-gray-900 text-center mx-auto">
