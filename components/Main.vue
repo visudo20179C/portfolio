@@ -1,22 +1,27 @@
 <template class="bg-gray-900">
 	<div class="w-full">
-		<div class="w-5/6 h-5/6 mt-20 mb-10 mx-auto bg-gray-900 relative lg:h-80 border-b-2 border-gray-500">
+		<div class="w-5/6 h-5/6 mt-20 mb-10 mx-auto bg-gray-900 relative lg:h-108 border-b-2 border-gray-500">
 			<div class="mb-24 w-3/4 m-auto">
 				<transition name="fade" mode="out-in">
 					<div v-if="!firstShow" key="0">
 						<div class="w-5/6 text-3xl text-visudo-green font-black mb-8 mt-4 border rounded-lg border-gray-900 text-center ml-auto mr-auto">
 							Who am I?
 						</div>
+						<img class="w-48 h-48 rounded-full mx-auto mb-2" src="me2.jpg" alt="A picture of me in Times Square NY.">
+						<div class="text-visudo-green text-xs text-center mb-4"><i>A picture of me in Times Square, NY.</i></div>
 						<div class="text-gray-500 text-lg font-bold md:mb-0">
-							Hi, my name is Cameron, otherwise known as my online alias "visudo". I stream on Twitch and I'm also a full-stack web developer who has been doing web development work for 3+ years. My technology "stack" consists of Linux, PHP, MySQL, JavaScript, &amp; HTML/CSS.
+							Hi, my name is Cameron, otherwise known as my online alias "visudo". I stream on Twitch and I'm also a full-stack web developer who has been doing web development work for 3+ years. I make things using Linux, PHP, MySQL, JavaScript, &amp; HTML/CSS.
 						</div>
 					</div>
 					<div class="text-gray-900 text-left" v-else-if="firstShow" key="1">
 						<div class="w-5/6 text-3xl text-visudo-green font-black mb-8 mt-4 border rounded-lg border-gray-900 text-center ml-auto mr-auto sm:w-2/3">
 							What do I want to do?
 						</div>
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-48 w-48 rounded-full mx-auto text-visudo-green mb-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+						</svg>
 						<div class="mb-10 text-gray-500 text-lg font-bold md:mb-0">
-							I want to develop websites and web services for Streamers and Content Creators alike. The benefit of hiring me compared to going with a competitor is that you get a completely customized experience. I also have extensive knowledge using 3rd-party API's such as PayPal, Twitch, Discord, and more.
+							I want to develop websites and web services for Streamers and Content Creators alike. Hiring me gives you a 1-on-1 experience tailored to specific web needs. I also have extensive knowledge using 3rd-party API's such as PayPal, Twitch, Discord, and more.
 						</div>
 					</div>
 				</transition>
@@ -38,7 +43,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-5/6 h-5/6 mt-4 mb-20 mx-auto bg-gray-900 shadow-lg font-bold text-gray-500 border-b-2 border-gray-500">
+		<div class="w-5/6 h-5/6 mt-10 mb-20 mx-auto bg-gray-900 shadow-lg font-bold text-gray-500 border-b-2 border-gray-500">
 			<div class="w-2/3 text-3xl text-visudo-green font-black mb-8 mt-4 border rounded-lg bg-gray-900 border-gray-900 text-center mx-auto">
 				What have I done?
 			</div>
@@ -197,6 +202,47 @@
 			  class="m-auto"
 			/>
 		</div>
+		<div class="w-2/3 text-3xl text-visudo-green font-black mb-10 mt-8 text-center mx-auto flex flex-col">
+			Service Status:
+		</div>
+		<div v-if="this.statusData != null" class="flex flex-col mb-8 text-visudo-green">
+			<div class="w-1/2 mx-auto px-2 py-2 text-visudo-green hover:bg-gray-700" v-for='item in this.statusData'>
+				<div v-for='i in Object.keys(item)' class="flex flex-row mb-2">
+					<div class="w-full">
+						{{i}}
+					</div>
+					<div v-if='i == "ConnectFourBackend" || i == "FollowBot"'>
+						<div v-for='i in item'>
+							<div v-if='i == 400 || i == 500'>
+								<img class="h-8 w-8 float-right" src="green.png"/>
+							</div>
+							<div v-else>
+								<img class="h-8 w-8 float-right" src="red.png"/>
+							</div>
+						</div>
+					</div>
+					<div v-else>
+						<div v-for='i in item'>
+							<div v-if='i == 200'>
+								<img class="h-8 w-8 float-right" src="green.png"/>
+							</div>
+							<div v-else>
+								<img class="h-8 w-8 float-right" src="red.png"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div v-else class="w-full mx-auto mb-10">
+			<div class="text-2xl mb-10 mt-10 text-center text-visudo-green">Loading... Please Wait... </div>
+			<half-circle-spinner
+			  :animation-duration="1000"
+			  :size="100"
+			  color="#15AB0D"
+			  class="m-auto"
+			/>
+		</div>
 		<div class="w-3/4 text-visudo-green mx-auto mb-10 text-center">
 			<div class="mb-4">
 				<i>The source code for this wesbite is open-source and proudly made using the </i><a class="text-visudo-blue hover:text-blue-300" href="https://nuxtjs.org/" target="_blank">NuxtJS</a><i> framework</i> 
@@ -222,6 +268,7 @@ export default {
 			player: null,
 			data: null,
 			gitHubData: null,
+			statusData: null,
 			pushEvents: [],
 			mozamKey: process.env.MOZAMRE_API_TOKEN,
 			gitHubKey: process.env.GITHUB_ACCESS_TOKEN,
@@ -248,11 +295,40 @@ export default {
 				this.data = data
 			}
 		},
+		processStatusData(data) {
+			if(data) {
+				data.push({'FollowBotBackend': 200})
+			}
+			else {
+				data.push({'Error': 'Invalid API Response.'})
+			}
+			this.statusData = data
+		},
 		async makeGitHubRequest() {
 			const octokit = new Octokit({auth: this.gitHubKey})
 			const gitHubResponse = await octokit.request("GET /users/visudo20179C/events")
 			this.gitHubData = gitHubResponse.data
 			this.setupPushEvents()
+		},
+		makeMozamRequest() {
+			fetch(
+				"https://api.mozambiquehe.re/bridge?version=5&platform=PC&player=visudo20179&auth="+this.mozamKey,
+				{
+					method: 'GET',
+				}
+			)
+			.then(response => response.json())
+			.then(data => this.processData(data))
+		},
+		makeStatusRequest() {
+			fetch(
+				"https://follow-bot-backend.plank-and-timber.com/api/status",
+				{
+					method: 'GET',
+				}
+			)
+			.then(response => response.json())
+			.then(data => this.processStatusData(data))
 		},
 		headRevision(s) {
 			return s.substr(0,7)
@@ -280,15 +356,9 @@ export default {
 		this.player = new Twitch.Player(this.$refs.tVideo, options)
 	},
 	created() {
-		fetch(
-			"https://api.mozambiquehe.re/bridge?version=5&platform=PC&player=visudo20179&auth="+this.mozamKey,
-			{
-				method: 'GET',
-			}
-		)
-		.then(response => response.json())
-		.then(data => this.processData(data))
+		this.makeMozamRequest()
 		this.makeGitHubRequest()
+		this.makeStatusRequest()
 	},
 }
 </script>
