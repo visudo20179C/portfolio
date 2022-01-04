@@ -3,10 +3,10 @@
 		<div class="flex justify-between pt-5">
 			<div class="flex mt-auto mb-auto">
 				<img class="h-12 w-12 ml-4 mt-auto mb-auto" src="../static/favicon.svg"/>
-				<div class="text-lg text-visudo-green font-bold mt-auto mb-auto ml-2 hidden sm:block"> Streaming | Web Development </div>
+				<div class="text-lg text-visudo-green font-bold mt-auto mb-auto ml-2 hidden sm:block"> Visudo | Web Development </div>
 			</div>
 			<div class="hidden mt-auto mb-auto text-lg text-blue-600 font-bold sm:flex">
-				<a class="mr-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.twitch.tv/v1sudo" target="_blank">Twitch</a> |
+				<a class="ml-2 mr-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://visudo.me/" target="_blank">Home</a> |
 				<a class="ml-2 mr-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.twitter.com/v1sudo" target="_blank">Twitter</a> |
 				<a class="ml-2 mr-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.youtube.com/channel/UC4gq_UflDu--JuISXL4C8UQ" target="_blank">YouTube</a> |
 				<a class="ml-2 mr-4 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://github.com/visudo20179C" target="_blank">GitHub</a>
@@ -31,7 +31,7 @@
 		<transition name="fade" mode="out-in">
 			<div v-if="shouldToggleMenu" class="mt-10 w-full text-lg text-blue-600 font-bold sm:hidden absolute z-40">
 					<div class="flex flex-col text-right bg-transparent">
-						<a class="px-4 py-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.twitch.tv/v1sudo" target="_blank">Twitch</a>
+						<a class="px-4 py-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://visudo.me/" target="_blank">Home</a>
 						<a class="px-4 py-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.twitter.com/v1sudo" target="_blank">Twitter</a>
 						<a class="px-4 py-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.youtube.com/channel/UC4gq_UflDu--JuISXL4C8UQ" target="_blank">YouTube</a>
 						<a class="px-4 py-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://github.com/visudo20179C" target="_blank">GitHub</a>

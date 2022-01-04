@@ -206,7 +206,7 @@
 			Service Status:
 		</div>
 		<div v-if="this.statusData != null" class="flex flex-col mb-8 text-visudo-green">
-			<div class="w-1/2 mx-auto px-2 py-2 text-visudo-green hover:bg-gray-700" v-for='item in this.statusData'>
+			<div class="w-1/2 mx-auto px-2 py-2 text-visudo-green hover:bg-gray-700 hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 font-bold rounded-lg" v-for='item in this.statusData'>
 				<div v-for='i in Object.keys(item)' class="flex flex-row mb-2">
 					<div class="w-full">
 						{{i}}
