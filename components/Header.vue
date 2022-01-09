@@ -7,8 +7,6 @@
 			</div>
 			<div class="hidden mt-auto mb-auto text-lg text-blue-600 font-bold sm:flex">
 				<a class="ml-2 mr-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://visudo.me/" target="_blank">Home</a> |
-				<a class="ml-2 mr-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.twitter.com/v1sudo" target="_blank">Twitter</a> |
-				<a class="ml-2 mr-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.youtube.com/channel/UC4gq_UflDu--JuISXL4C8UQ" target="_blank">YouTube</a> |
 				<a class="ml-2 mr-4 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://github.com/visudo20179C" target="_blank">GitHub</a>
 			</div>
 			<div class="flex sm:hidden">
@@ -32,8 +30,6 @@
 			<div v-if="shouldToggleMenu" class="mt-10 w-full text-lg text-blue-600 font-bold sm:hidden absolute z-40">
 					<div class="flex flex-col text-right bg-transparent">
 						<a class="px-4 py-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://visudo.me/" target="_blank">Home</a>
-						<a class="px-4 py-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.twitter.com/v1sudo" target="_blank">Twitter</a>
-						<a class="px-4 py-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://www.youtube.com/channel/UC4gq_UflDu--JuISXL4C8UQ" target="_blank">YouTube</a>
 						<a class="px-4 py-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://github.com/visudo20179C" target="_blank">GitHub</a>
 					</div>
 			</div>

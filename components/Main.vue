@@ -57,6 +57,10 @@
 					<div class="flex flex-col"><a href="https://apex-stats.visudo.me/" target="_blank" class="w-2/3 ml-auto mr-auto text-visudo-green text-center border-2 rounded-full py-1.5 px-3 border-visudo-green text-sm font-black hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 text-lg">Apex Stats</a><div class="w-2/3 m-auto mt-4 text-center">A hobby project that was inspired by my love for gaming. This is a "server-less" VueJS project.<a href="https://github.com/visudo20179C/apex-player-stats" target="_blank"><img src="../static/GitHub-Mark-Light-32px.png" class="m-auto mt-4"/></a></div></div>
 				</div>
 			</div>
+			<div class="w-2/3 text-lg text-visudo-green font-black mb-8 mt-4 border rounded-lg bg-gray-900 border-gray-900 text-center mx-auto">
+				Open-source contributions:
+			</div>
+			<div class="w-full mb-8 text-center"><a href="https://apexlegendsstatus.com/discord/" target="_blank" class="mx-auto py-2 px-4 text-visudo-green text-center border-2 rounded-full border-visudo-green text-sm font-black hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 text-lg">ALS Bot</a><div class="w-3/4 mx-auto mt-4 mb-4 text-center">The official Apex Legends Status discord bot.<a href="https://github.com/HugoDerave/als_bot" target="_blank"><img src="../static/GitHub-Mark-Light-32px.png" class="m-auto mt-4"/></a></div></div>
 		</div>
 		<div class="w-5/6 mx-auto border-b-2 border-gray-500">
 			<transition name="fade" mode="out-in">
@@ -65,15 +69,15 @@
 						What do I like to make?
 					</div>
 					<div class="mx-auto h-3/4 w-3/4 flex flex-col justify-evenly items-top mb-10 pb-10 text-center text-gray-900 font-bold lg:h-80 lg:flex-row">
-						<div class="w-1/2 mx-auto border border-2 rounded-lg border-gray-500 bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4">
+						<div class="w-1/2 mx-auto border border-2 rounded-lg border-visudo-green bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4">
 							<div class="mx-auto mt-4 md:text-lg mb-4 text-visudo-green font-black">Node.js Micro-services</div>
 							<img src="../static/Node.js_logo.svg" class="m-auto w-2/3 h-2/3 pb-4 lg:pb-0"/>
 						</div>
-						<div class="w-1/2 mx-auto mt-6 border border-2 rounded-lg border-gray-500 bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4 lg:mt-0">
+						<div class="w-1/2 mx-auto mt-6 border border-2 rounded-lg border-visudo-green bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4 lg:mt-0">
 							<div class="ml-auto mr-auto mt-4 md:text-lg mb-4 text-visudo-green font-black">CRUD applications</div>
 							<img src="../static/lara.svg" class="m-auto w-2/3 h-2/3 pb-4 lg:pb-0"/>
 						</div>
-						<div class="w-1/2 mx-auto mt-6 border border-2 rounded-lg border-gray-500 bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4 lg:mt-0">
+						<div class="w-1/2 mx-auto mt-6 border border-2 rounded-lg border-visudo-green bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4 lg:mt-0">
 							<div class="ml-auto mr-auto mt-4 md:text-lg mb-4 text-visudo-green font-black">Single Page Applications</div>
 							<img src="../static/Vue.js_Logo_2.svg" class="m-auto w-2/3 h-2/3 pb-4 lg:pb-0"/>
 						</div>
@@ -84,15 +88,15 @@
 						What services can I integrate?
 					</div>
 					<div class="mx-auto h-3/4 w-3/4 flex flex-col justify-evenly items-top mb-10 pb-10 text-center text-gray-900 font-bold lg:h-80 lg:flex-row">
-						<div class="w-1/2 mx-auto border border-2 rounded-lg border-gray-500 bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4">
+						<div class="w-1/2 mx-auto border border-2 rounded-lg border-visudo-green bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4">
 							<div class="mx-auto mt-4 text-lg mb-4 text-visudo-green font-black">Discord</div>
 							<img src="../static/js_discord-ar21.svg" class="m-auto w-2/3 h-2/3 pb-4 lg:pb-0"/>
 						</div>
-						<div class="w-1/2 mx-auto mt-6 border border-2 rounded-lg border-gray-500 bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4 lg:mt-0">
+						<div class="w-1/2 mx-auto mt-6 border border-2 rounded-lg border-visudo-green bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4 lg:mt-0">
 							<div class="mx-auto mt-4 text-lg mb-4 text-visudo-green font-black">Twitch</div>
 							<img src="../static/Twitch_logo.svg" class="m-auto w-2/3 h-2/3 pb-4 lg:pb-0"/>
 						</div>
-						<div class="w-1/2 mx-auto mt-6 border border-2 rounded-lg border-gray-500 bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4 lg:mt-0">
+						<div class="w-1/2 mx-auto mt-6 border border-2 rounded-lg border-visudo-green bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4 lg:mt-0">
 							<div class="mx-auto mt-4 mb-0 text-lg text-visudo-green font-black lg:mb-16">GitHub</div>
 							<img src="../static/GitHub_Logo_White.png" class="mt-4 pb-4 lg:pb-0"/>
 						</div>
@@ -116,8 +120,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-2/3 text-3xl text-visudo-green font-black mb-10 mt-8 text-center mx-auto">
+		<div class="w-2/3 text-3xl text-visudo-green font-black mb-10 mt-8 text-center mx-auto flex flex-col">
 			Twitch Embed/Apex Stats:
+			<i class="text-visudo-green text-xs sm:text-sm">Some cool things I can do.</i>
 		</div>
 		<div class="flex flex-col h-full w-full justify-evenly mb-10 lg:flex-row mx-auto lg:w-3/4">
 			<div class="w-5/6 lg:w-1/2 mx-auto mb-4 lg:mb-none">
@@ -125,7 +130,7 @@
 			</div>
 			<div class="w-1/2 h-full mb-4 text-center mx-auto">
 				<transition name="fade" mode="out-in">
-					<div v-if="this.data != null && this.data.Error == null" class="text-visudo-green" key="0">
+					<div v-if="this.data != null && this.data.Error == null" class="w-2/3 mx-auto text-visudo-green border border-2 rounded-lg border-visudo-green bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 py-2" key="0">
 						<div class="text-2xl font-bold mb-10">
 							Last Played Legend:
 						</div>
@@ -133,8 +138,8 @@
 							{{this.data.legends.selected.LegendName}}
 						</div>
 						<img class="object-contain mx-auto h-48 w-48 mb-4" :src="this.data.legends.selected.ImgAssets.icon"/>
-						<p class="ml-auto mr-auto mb-4 w-64 mx-auto">
-							Skin: <i>{{this.data.legends.selected.gameInfo.skin}}</i>
+						<p class="mb-4 mx-auto">
+							Skin: <i class="text-sm mx-auto">{{this.data.legends.selected.gameInfo.skin}}</i>
 						</p>
 						<h1 class="text-xl mb-4 mx-auto">Equipped Trackers:</h1>
 						<ul>
@@ -204,9 +209,10 @@
 		</div>
 		<div class="w-2/3 text-3xl text-visudo-green font-black mb-10 mt-8 text-center mx-auto flex flex-col">
 			Service Status:
+			<i class="text-visudo-green text-xs sm:text-sm">Displays the status of the services I maintain.</i>
 		</div>
-		<div v-if="this.statusData != null" class="flex flex-col mb-8 text-visudo-green">
-			<div class="w-1/2 mx-auto px-2 py-2 text-visudo-green hover:bg-gray-700 hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 font-bold rounded-lg" v-for='item in this.statusData'>
+		<div v-if="this.statusData != null" class="flex flex-col mb-16 text-visudo-green border border-visudo-green rounded w-1/2 mx-auto px-2 py-2">
+			<div class="w-full mx-auto px-2 py-2 text-visudo-green hover:bg-gray-700 hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 font-bold rounded-lg" v-for='item in this.statusData'>
 				<div v-for='i in Object.keys(item)' class="flex flex-row mb-2">
 					<div class="w-full">
 						{{i}}
