@@ -25,7 +25,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="w-5/6 h-5/6 mt-10 mb-10 mx-auto bg-gray-900 text-gray-500">
+		<div class="w-5/6 h-5/6 mt-10 mb-10 mx-auto bg-gray-900 text-gray-500 shadow-lg">
 			<div class="w-2/3 text-3xl text-visudo-green font-black mb-8 mt-4 border rounded-lg bg-gray-900 border-gray-900 text-center mx-auto">
 				Dev experience:
 			</div>
@@ -42,7 +42,7 @@
 			<div class="w-2/3 text-lg text-visudo-green font-black mb-8 mt-4 border rounded-lg bg-gray-900 border-gray-900 text-center mx-auto">
 				Open-source contributions:
 			</div>
-			<div class="w-full mb-8 text-center"><a href="https://apexlegendsstatus.com/discord/" target="_blank" class="mx-auto py-2 px-4 text-visudo-green text-center border-2 rounded-full border-visudo-green text-sm font-black hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 text-lg">ALS Bot</a><div class="w-3/4 mx-auto mt-4 mb-4 text-center">The official Apex Legends Status discord bot.<a href="https://github.com/HugoDerave/als_bot" target="_blank"><img src="../static/GitHub-Mark-Light-32px.png" class="m-auto mt-4"/></a></div></div>
+			<div class="w-full mb-8 text-center"><a href="https://apexlegendsstatus.com/discord/" target="_blank" class="mx-auto py-2 px-4 text-visudo-green text-center border-2 rounded-full border-visudo-green text-sm font-black hover:text-visudo-blue hover:border-visudo-blue transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60 text-lg">ALS Bot</a><div class="w-3/4 mx-auto mt-4 mb-4 text-center">The official Apex Legends Status discord bot.<a href="https://github.com/HugoDerave/als_bot" target="_blank"><img src="../static/GitHub-Mark-Light-32px.png" class="m-auto mt-4 pb-4"/></a></div></div>
 		</div>
 		<div class="w-5/6 mx-auto">
 			<transition name="fade" mode="out-in">
@@ -50,7 +50,7 @@
 					<div class="w-2/3 text-xl text-visudo-green font-black mb-8 mt-4 text-center ml-auto mr-auto">
 						Types of apps I can create:	
 					</div>
-					<div class="mx-auto h-3/4 w-3/4 flex flex-col justify-evenly items-top mb-10 pb-10 text-center text-gray-900 font-bold lg:h-80 lg:flex-row">
+					<div class="mx-auto h-3/4 w-3/4 flex flex-col justify-evenly items-top mb-4 text-center text-gray-900 font-bold lg:h-80 lg:flex-row">
 						<div class="w-1/2 mx-auto border border-2 rounded-lg border-visudo-green bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4">
 							<div class="mx-auto mt-4 md:text-lg mb-4 text-visudo-green font-black">Node.js Micro-services</div>
 							<img src="../static/Node.js_logo.svg" class="m-auto w-2/3 h-2/3 pb-4 lg:pb-0"/>
@@ -69,7 +69,7 @@
 					<div class="w-2/3 text-xl text-visudo-green font-black mb-8 mt-4 text-center ml-auto mr-auto">
 						Services I have knowledge using:
 					</div>
-					<div class="mx-auto h-3/4 w-3/4 flex flex-col justify-evenly items-top mb-10 pb-10 text-center text-gray-900 font-bold lg:h-80 lg:flex-row">
+					<div class="mx-auto h-3/4 w-3/4 flex flex-col justify-evenly items-top mb-4 text-center text-gray-900 font-bold lg:h-80 lg:flex-row">
 						<div class="w-1/2 mx-auto border border-2 rounded-lg border-visudo-green bg-gray-900 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 lg:w-1/4">
 							<div class="mx-auto mt-4 text-lg mb-4 text-visudo-green font-black">Discord</div>
 							<img src="../static/js_discord-ar21.svg" class="m-auto w-2/3 h-2/3 pb-4 lg:pb-0"/>
@@ -85,7 +85,7 @@
 					</div>
 				</div>
 			</transition>
-			<div class="pb-8">
+			<div>
 				<div class="">
 					<div class="flex justify-center">
 						<button @click="secondShowPrev">
