@@ -3,10 +3,9 @@
 		<div class="flex justify-between pt-5">
 			<div class="flex mt-auto mb-auto">
 				<img class="h-12 w-12 ml-4 mt-auto mb-auto" src="../static/favicon.svg"/>
-				<div class="text-lg text-visudo-green font-bold mt-auto mb-auto ml-2 hidden sm:block"> Visudo | Web Development </div>
+				<div class="text-lg text-visudo-green font-bold mt-auto mb-auto ml-2 hidden sm:block"> Web Development </div>
 			</div>
 			<div class="hidden mt-auto mb-auto text-lg text-blue-600 font-bold sm:flex">
-				<a class="ml-2 mr-2 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://visudo.me/" target="_blank">Home</a> |
 				<a class="ml-2 mr-4 hover:text-blue-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-60" href="https://github.com/visudo20179C" target="_blank">GitHub</a>
 			</div>
 			<div class="flex sm:hidden">

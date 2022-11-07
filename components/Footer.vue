@@ -1,11 +1,17 @@
 <template>
-	<div class="w-full flex justify-between h-full bg-gray-900 border-double border-t-8 border-gray-500 sm:h-48 pb-10 pt-10">
-		<div class="w-3/4 hidden mt-auto mb-auto ml-4 text-visudo-red border border-2 border-gray-900 md:block">
+	<div class="w-full flex flex-row bg-gray-900 border-double border-t-8 border-gray-500">
+		<div class="w-full hidden mt-auto mb-auto ml-4 text-visudo-red border border-2 border-gray-900 md:block">
 			{{this.selectedQuote}}
 		</div>
-		<div class="m-auto text-visudo-green text-center">
-			<div class="w-1/2 mx-auto font-bold md:w-3/4">Are you a streamer or other content creator in need of a website or web service? Contact Me:</div>
-			<ul class="mt-4">
+		<div class="w-full text-visudo-green mx-auto my-auto text-center">
+			<div class="mb-4">
+				<i>The source code for this wesbite was proudly made using the </i><a class="text-visudo-blue hover:text-blue-300" href="https://nuxtjs.org/" target="_blank">NuxtJS</a><i> framework</i>
+			</div>
+			<iframe src="https://ghbtns.com/github-btn.html?user=visudo20179C&repo=portfolio&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+		</div>
+		<div class="w-full m-auto text-visudo-green text-center">
+			<div class="w-1/2 mx-auto font-bold md:w-3/4">Contact Me</div>
+			<ul class="">
 				<li>Email:  cjkbusiness96@gmail.com</li>
 				<li>Discord: visudo#0318 </li>
 			</ul>
