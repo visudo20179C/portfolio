@@ -1,7 +1,7 @@
 <template class="bg-gray-900">
 	<div class="w-full relative bg-gray-900 mt-12 mb-48">
-	<TabView scrollable :activeIndex="active">
-		<TabPanel>
+		<transition name="fade" mode="out-in">
+		<div v-if="active == 0" key="0">
 		<div class="w-full h-5/6 mx-auto bg-gray-900">
 			<div class="w-3/4 m-auto flex flex-col lg:flex-row divide-x divide-gray-900 lg:divide-gray-500">
 				<div class="w-2/3 mx-auto mb-8">
@@ -11,7 +11,7 @@
 					<img class="w-48 h-48 rounded-full mx-auto mb-2" src="me2.jpg" alt="A picture of me in Times Square NY.">
 					<div class="text-visudo-green text-xs text-center mb-4"><i>A picture of me in Times Square, NY.</i></div>
 					<div class="text-gray-500 text-md text-left md:mb-0 w-3/4 mx-auto">
-						I'm currently employed woring as a full-stack web developer who has been doing web development work for 4+ years. My core skills are Linux, PHP, MySQL, JavaScript, &amp; HTML/CSS.
+						I'm currently employed working as a full-stack web developer who has been doing web development work for 4+ years. My core skills are Linux, PHP, MySQL, JavaScript, &amp; HTML/CSS.
 					</div>
 				</div>
 				<div class="w-2/3 mx-auto">
@@ -27,8 +27,8 @@
 				</div>
 			</div>
 		</div>
-		</TabPanel>
-		<TabPanel>
+		</div>
+		<div v-else-if="active == 1" key="1">
 		<div class="w-5/6 h-5/6 mx-auto bg-gray-900 text-gray-500">
 			<div class="w-2/3 text-3xl text-visudo-green font-black mb-8 mt-4 border rounded-lg bg-gray-900 border-gray-900 text-center mx-auto">
 				Development Experience
@@ -52,8 +52,8 @@
 				</div>
 			</div>
 		</div>
-		</TabPanel>
-		<TabPanel>
+		</div>
+		<div v-else-if="active == 2" key="2">
 		<div class="w-5/6 h-5/6 mx-auto">
 			<transition name="fade" mode="out-in">
 				<div v-if="!secondShow" key="0">
@@ -112,8 +112,8 @@
 				</div>
 			</div>
 		</div>
-		</TabPanel>
-		<TabPanel>
+		</div>
+		<div v-else-if="active == 3" key="3">
 		<div class="flex flex-col w-5/6 mx-auto sm:flex-row">
 			<div class="w-full">
 				<div class="w-2/3 text-3xl text-visudo-green font-black mb-10 mt-8 text-center mx-auto flex flex-col">
@@ -206,15 +206,15 @@
 				</div>
 			</div>
 		</div>
-		</TabPanel>
-		<TabPanel>
-        <div class="w-3/4 flex flex-row bg-gray-900 mx-auto mt-12">
-                <div class="w-2/3 text-visudo-green mx-auto my-auto text-center">
+		</div>
+		<div v-else-if="active == 4" key="4">
+        <div class="w-3/4 flex flex-col bg-gray-900 mx-auto mt-12 sm:flex-row">
+                <div class="w-2/3 text-visudo-green mx-auto my-auto text-center mb-4">
 						<img src="/colored-white-text.png" class="mx-auto mb-4"/>
                         <div class="mb-4">
                                 <i>The source code for this wesbite was proudly made using the </i><a class="text-visudo-blue hover:text-blue-300" href="https://nuxtjs.org/" target="_blank">NuxtJS</a><i> framework</i>
                         </div>
-                        <iframe src="https://ghbtns.com/github-btn.html?user=visudo20179C&repo=portfolio&type=star&count=true&size=large" frameborder="0" scrolling="0" width="100%" height="30" title="GitHub"></iframe>
+                        <iframe src="https://ghbtns.com/github-btn.html?user=visudo20179C&repo=portfolio&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
                 </div>
                 <div class="w-2/3 m-auto text-visudo-green text-center">
 						<img src="/icons-contacts-500.png" class="h-36 w-36 mx-auto mb-4"/>
@@ -225,7 +225,8 @@
                         </ul>
                 </div>
         </div>
-		</TabPanel>
+		</div>
+		</transition>
 		<div class="flex justify-center absolute left-2 top-0">
 			<div class="flex flex-col">
 			<button @click="slidePrev">
@@ -235,6 +236,8 @@
 			</button>
 			<i class="text-xs text-visudo-green">prev</i>
 			</div>
+		</div>
+		<div class="flex justify-center absolute right-2 top-0">
 			<div class="flex flex-col">
 			<button @click="slideNext">
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-visudo-green hover:text-visudo-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -244,7 +247,6 @@
 			<i class="text-xs text-visudo-green">next</i>
 			</div>
 		</div>
-		</TabView>
 	</div>
 </template>
 
@@ -386,12 +388,22 @@ export default {
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-.p-tabview-panels {
-  transition: opacity .5s !important;
-}
 iframe {
 	margin: auto;
 	border-radius: 20px;
+}
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>
 
